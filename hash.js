@@ -4,7 +4,7 @@
 var hash = (function() {
 
     var fromHash = function() {
-        var params = window.location.hash ? window.location.hash.substr(1).split("&") : [],
+        var params = window.location.hash ? ( window.location.hash.indexOf("!") === 1 ? window.location.hash.substr(2).split("&") : window.location.hash.substr(1).split("&") ) : [],
             paramsObject = {};
 
         for(var i = 0; i < params.length; i++) {
